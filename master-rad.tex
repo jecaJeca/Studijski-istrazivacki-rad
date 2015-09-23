@@ -1,0 +1,145 @@
+\documentclass[11pt,a4paper,serbian,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[serbian]{babel}
+\usepackage{pdfsync}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{url}
+
+% Komanda za horizontal ruler
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%
+% Definicija fiksiranih reci
+%
+\addto\captionsserbian{%
+ \def\prefacename{Предговор}%
+ \def\refname{Списак литературе}%
+ \def\abstractname{Сажетак}%
+ \def\bibname{Литература}%
+ \def\chaptername{Глава}%
+ \def\appendixname{Додатак}%
+ \def\contentsname{Садржај}%
+ \def\listfigurename{Списак слика}%
+ \def\listtablename{Списак табела}%
+ \def\indexname{Регистар}%
+ \def\figurename{Слика}%
+ \def\tablename{Табела}%
+ \def\partname{Део}%
+ \def\enclname{Прилози}%
+ \def\ccname{Копије}%
+ \def\headtoname{Прима}%
+ \def\pagename{Страна}%
+ \def\seename{Види}%
+ \def\alsoname{Види такође}%
+ \def\proofname{Доказ}%
+ \def\glossaryname{Речник непознатих речи}
+ \def\contentsname{Садржај}%
+ }%
+
+%
+% Dodavanje definicija, teorema, primera ...
+%
+\newtheorem{de}{Дефиниција}
+\newtheorem{pr}{Пример}
+\newtheorem{te}{Теорема}
+\newtheorem{dok}{Доказ}
+
+%
+% Uvodjenje srpskih navodnika
+%
+\def\zn{,\kern-0.09em,}
+
+
+%
+% Podesavanja paketa za listinge
+%
+\renewcommand\lstlistingname{Листинг}
+\lstset {
+	basicstyle=\footnotesize\ttfamily,
+	numbers=left,
+	numberstyle=\tiny,
+	%stepnumber=2,
+	numbersep=5pt,
+	tabsize=2,
+	extendedchars=true,
+	breaklines=true,
+	keywordstyle=\color{blue},
+	frame=b,
+	stringstyle=\color{white}\ttfamily,
+	showspaces=false,
+	showtabs=false,
+	xleftmargin=17pt,
+	framexleftmargin=14pt,
+	framexrightmargin=3pt,
+	framexbottommargin=4pt,
+	framextopmargin=0pt,
+	%backgroundcolor=\color{lightgray},
+	showstringspaces=false
+}
+
+\lstloadlanguages {
+	% Pogledati dokumentaciju koji si jezici jos podrzani
+	%[Visual]Basic
+	%Pascal
+	%C
+	%C++
+	%Python
+	Java,
+	XML
+	%HTML
+}
+
+%
+% Podesavanje okvira listinga
+%
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{12pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize} }
+
+
+%
+% Podesavanje sadrzaja
+%
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=red,
+    linktoc=all
+}
+
+%
+% Pocetak dokumenta
+%
+\begin{document}
+
+\input{naslovna.tex}
+
+\tableofcontents
+
+% Poglavlja rada
+\input{poglavlja/UvodTM.tex}
+\input{poglavlja/idejaTM.tex}
+\input{poglavlja/matematika.tex}
+\input{poglavlja/istorija.tex}
+\input{poglavlja/rezultati.tex}
+
+
+\end{document}
+
+
